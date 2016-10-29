@@ -6,27 +6,27 @@
 //  Copyright © 2016年 midori hirose. All rights reserved.
 //
 
-enum HttpMethod<Body> {
-    case get
-    case post(Body)
-}
+import UIKit
 
-extension HttpMethod {
-    var string: String {
-        switch self {
-        case .get: return "GET"
-        case .post: return "POST"
+final class NetworkEngine {
+    
+    func getAsync(text: String) {
+        let urlDomainString = "http://townantonym.herokuapp.com/api/antonyms/?phrase=" + text
+        guard let urlDomain = URL(string: urlDomainString) else {
+            return
         }
-    }
-}
-
-extension HttpMethod {
-    func map<T> (f: (Body) -> T) -> HttpMethod<T> {
-        switch self {
-        case .get:
-            return .get
-        case .post(let body):
-            return .post(f(body))
-        }
+        var request = NSMutableURLRequest(url: urlDomain) as URLRequest
+        request.httpMethod = "GET"
+        
+        // use NSURLSessionDataTask
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+            if (error == nil) {
+                let result = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!
+                print(result)
+            } else {
+                print(error)
+            }
+        })
+        task.resume()
     }
 }

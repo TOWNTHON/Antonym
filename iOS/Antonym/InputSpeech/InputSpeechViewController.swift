@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+import SwiftDate
 
 final class InputSpeechViewController: UIViewController {
 
@@ -87,19 +88,29 @@ final class InputSpeechViewController: UIViewController {
         // 録音が完了する前のリクエストを作るかどうかのフラグ。
         // trueだと現在-1回目のリクエスト結果が返ってくる模様。falseだとボタンをオフにしたときに音声認識の結果が返ってくる設定。
         recognitionRequest.shouldReportPartialResults = true
+        var isFirst = false
         
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
             guard let `self` = self else { return }
-            
             var isFinal = false
+            //var startRecord =
             
             if let result = result {
-                self.label.text = result.bestTranscription.formattedString
+                let inputText = result.bestTranscription.formattedString
+                self.label.text = inputText
                 isFinal = result.isFinal
+                
+                print(inputText)
+                isFirst = true
+                print(isFirst)
+                
+                //let networkingEngine = NetworkEngine()
+                //networkingEngine.getAsync(text: inputText)
             }
             
             // エラーがある、もしくは最後の認識結果だった場合の処理
             if error != nil || isFinal {
+                print("final: \(isFinal)")
                 self.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
                 
@@ -147,5 +158,11 @@ extension InputSpeechViewController: SFSpeechRecognizerDelegate {
             button.isEnabled = false
             button.setTitle("音声認識ストップ", for: .disabled)
         }
+    }
+}
+
+extension SFSpeechRecognitionResult {
+    class func isFinal() -> Bool {
+        return false
     }
 }
