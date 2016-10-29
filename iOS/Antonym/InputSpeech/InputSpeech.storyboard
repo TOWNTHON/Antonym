@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XSa-qs-iOZ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Input Speech View Controller-->
+        <scene sceneID="4A8-v6-IoQ">
+            <objects>
+                <viewController id="XSa-qs-iOZ" customClass="InputSpeechViewController" customModule="Antonym" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zvq-wr-Ioy"/>
+                        <viewControllerLayoutGuide type="bottom" id="9tj-b3-SDg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KH5-df-DzB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHG-d0-8WM">
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapStartButton:" destination="XSa-qs-iOZ" eventType="touchUpInside" id="uEc-z9-rwD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-CI-2DF">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WHG-d0-8WM" firstAttribute="centerY" secondItem="KH5-df-DzB" secondAttribute="centerY" id="XOR-gL-M98"/>
+                            <constraint firstItem="WHG-d0-8WM" firstAttribute="top" secondItem="ljX-CI-2DF" secondAttribute="bottom" constant="50" id="iEv-ST-LDn"/>
+                            <constraint firstItem="ljX-CI-2DF" firstAttribute="centerX" secondItem="WHG-d0-8WM" secondAttribute="centerX" id="mwR-zX-mmM"/>
+                            <constraint firstItem="WHG-d0-8WM" firstAttribute="centerX" secondItem="KH5-df-DzB" secondAttribute="centerX" id="tgc-HC-moe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="WHG-d0-8WM" id="aDZ-Iy-FOz"/>
+                        <outlet property="label" destination="ljX-CI-2DF" id="Vlb-jI-iRc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mg0-43-vkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="168"/>
+        </scene>
+    </scenes>
+</document>
