@@ -11,11 +11,11 @@ import UIKit
 final class NetworkEngine {
     
     func getAsync(text: String) {
-        let urlDomainString = "http://townantonym.herokuapp.com/api/antonyms/?phrase=" + text
-        guard let urlDomain = URL(string: urlDomainString) else {
+        let urlString = "http://antonym.herokuapp.com/api/antonyms/?phrase=" + uriEncode(text: text)
+        guard let url = URL(string: urlString) else {
             return
         }
-        var request = NSMutableURLRequest(url: urlDomain) as URLRequest
+        var request = NSMutableURLRequest(url: url) as URLRequest
         request.httpMethod = "GET"
         
         // use NSURLSessionDataTask
@@ -28,5 +28,9 @@ final class NetworkEngine {
             }
         })
         task.resume()
+    }
+    
+    func uriEncode(text: String) -> String {
+        return text.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.alphanumerics)!
     }
 }

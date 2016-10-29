@@ -17,7 +17,7 @@
 		AD5117C01DC438C8006B6070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5117BE1DC438C8006B6070 /* LaunchScreen.storyboard */; };
 		AD5117CB1DC438C8006B6070 /* AntonymTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5117CA1DC438C8006B6070 /* AntonymTests.swift */; };
 		AD5117D61DC438C8006B6070 /* AntonymUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5117D51DC438C8006B6070 /* AntonymUITests.swift */; };
-		AD7F22531DC4DB9900140D68 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F22521DC4DB9900140D68 /* HttpMethod.swift */; };
+		AD7F22531DC4DB9900140D68 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F22521DC4DB9900140D68 /* NetworkEngine.swift */; };
 		AD7F22581DC4EEBA00140D68 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7F22571DC4EEBA00140D68 /* SwiftDate.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		AD5117D11DC438C8006B6070 /* AntonymUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntonymUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5117D51DC438C8006B6070 /* AntonymUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonymUITests.swift; sourceTree = "<group>"; };
 		AD5117D71DC438C8006B6070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD7F22521DC4DB9900140D68 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		AD7F22521DC4DB9900140D68 /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		AD7F22571DC4EEBA00140D68 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,7 +152,7 @@
 		AD7F22511DC4DB5B00140D68 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				AD7F22521DC4DB9900140D68 /* HttpMethod.swift */,
+				AD7F22521DC4DB9900140D68 /* NetworkEngine.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 			files = (
 				AD5117BB1DC438C8006B6070 /* Antonym.xcdatamodeld in Sources */,
 				AD4E74DB1DC4D25A0052948E /* InputSpeechViewController.swift in Sources */,
-				AD7F22531DC4DB9900140D68 /* HttpMethod.swift in Sources */,
+				AD7F22531DC4DB9900140D68 /* NetworkEngine.swift in Sources */,
 				AD5117B51DC438C8006B6070 /* ViewController.swift in Sources */,
 				AD5117B31DC438C8006B6070 /* AppDelegate.swift in Sources */,
 			);
