@@ -1,3 +1,7 @@
 # OSX
 .DS_Store
 .Trashes
+
+# API
+node_modules
+npm-debug.log
