@@ -516,6 +516,7 @@
 				AD5117DC1DC438C8006B6070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD5117DD1DC438C8006B6070 /* Build configuration list for PBXNativeTarget "AntonymTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +525,7 @@
 				AD5117DF1DC438C8006B6070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD5117E01DC438C8006B6070 /* Build configuration list for PBXNativeTarget "AntonymUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +534,7 @@
 				AD5117E21DC438C8006B6070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
