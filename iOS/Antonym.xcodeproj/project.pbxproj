@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD4E74DB1DC4D25A0052948E /* InputSpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E74DA1DC4D25A0052948E /* InputSpeechViewController.swift */; };
+		AD4E74DD1DC4D3A50052948E /* InputSpeech.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4E74DC1DC4D3A50052948E /* InputSpeech.storyboard */; };
 		AD5117B31DC438C8006B6070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5117B21DC438C8006B6070 /* AppDelegate.swift */; };
 		AD5117B51DC438C8006B6070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5117B41DC438C8006B6070 /* ViewController.swift */; };
 		AD5117B81DC438C8006B6070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5117B61DC438C8006B6070 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD4E74DA1DC4D25A0052948E /* InputSpeechViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSpeechViewController.swift; sourceTree = "<group>"; };
+		AD4E74DC1DC4D3A50052948E /* InputSpeech.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InputSpeech.storyboard; sourceTree = "<group>"; };
 		AD5117AF1DC438C8006B6070 /* Antonym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Antonym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5117B21DC438C8006B6070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD5117B41DC438C8006B6070 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD4E74D91DC4D1EF0052948E /* InputSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				AD4E74DA1DC4D25A0052948E /* InputSpeechViewController.swift */,
+				AD4E74DC1DC4D3A50052948E /* InputSpeech.storyboard */,
+			);
+			path = InputSpeech;
+			sourceTree = "<group>";
+		};
 		AD5117A61DC438C8006B6070 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		AD5117B11DC438C8006B6070 /* Antonym */ = {
 			isa = PBXGroup;
 			children = (
+				AD4E74D91DC4D1EF0052948E /* InputSpeech */,
 				AD5117B21DC438C8006B6070 /* AppDelegate.swift */,
 				AD5117B41DC438C8006B6070 /* ViewController.swift */,
 				AD5117B61DC438C8006B6070 /* Main.storyboard */,
@@ -239,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5117C01DC438C8006B6070 /* LaunchScreen.storyboard in Resources */,
+				AD4E74DD1DC4D3A50052948E /* InputSpeech.storyboard in Resources */,
 				AD5117BD1DC438C8006B6070 /* Assets.xcassets in Resources */,
 				AD5117B81DC438C8006B6070 /* Main.storyboard in Resources */,
 			);
@@ -266,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5117BB1DC438C8006B6070 /* Antonym.xcdatamodeld in Sources */,
+				AD4E74DB1DC4D25A0052948E /* InputSpeechViewController.swift in Sources */,
 				AD5117B51DC438C8006B6070 /* ViewController.swift in Sources */,
 				AD5117B31DC438C8006B6070 /* AppDelegate.swift in Sources */,
 			);
