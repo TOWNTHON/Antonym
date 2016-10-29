@@ -17,6 +17,8 @@
 		AD5117C01DC438C8006B6070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5117BE1DC438C8006B6070 /* LaunchScreen.storyboard */; };
 		AD5117CB1DC438C8006B6070 /* AntonymTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5117CA1DC438C8006B6070 /* AntonymTests.swift */; };
 		AD5117D61DC438C8006B6070 /* AntonymUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5117D51DC438C8006B6070 /* AntonymUITests.swift */; };
+		AD7F22531DC4DB9900140D68 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7F22521DC4DB9900140D68 /* NetworkEngine.swift */; };
+		AD7F22581DC4EEBA00140D68 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7F22571DC4EEBA00140D68 /* SwiftDate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		AD5117D11DC438C8006B6070 /* AntonymUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntonymUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5117D51DC438C8006B6070 /* AntonymUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntonymUITests.swift; sourceTree = "<group>"; };
 		AD5117D71DC438C8006B6070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7F22521DC4DB9900140D68 /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		AD7F22571DC4EEBA00140D68 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7F22581DC4EEBA00140D68 /* SwiftDate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,7 @@
 				AD5117C91DC438C8006B6070 /* AntonymTests */,
 				AD5117D41DC438C8006B6070 /* AntonymUITests */,
 				AD5117B01DC438C8006B6070 /* Products */,
+				AD7F22561DC4EEBA00140D68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +118,7 @@
 		AD5117B11DC438C8006B6070 /* Antonym */ = {
 			isa = PBXGroup;
 			children = (
+				AD7F22511DC4DB5B00140D68 /* Networking */,
 				AD4E74D91DC4D1EF0052948E /* InputSpeech */,
 				AD5117B21DC438C8006B6070 /* AppDelegate.swift */,
 				AD5117B41DC438C8006B6070 /* ViewController.swift */,
@@ -142,6 +149,22 @@
 			path = AntonymUITests;
 			sourceTree = "<group>";
 		};
+		AD7F22511DC4DB5B00140D68 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AD7F22521DC4DB9900140D68 /* NetworkEngine.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AD7F22561DC4EEBA00140D68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD7F22571DC4EEBA00140D68 /* SwiftDate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +175,7 @@
 				AD5117AB1DC438C8006B6070 /* Sources */,
 				AD5117AC1DC438C8006B6070 /* Frameworks */,
 				AD5117AD1DC438C8006B6070 /* Resources */,
+				AD7F22591DC4EED200140D68 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -275,6 +299,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD7F22591DC4EED200140D68 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AD5117AB1DC438C8006B6070 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -282,6 +323,7 @@
 			files = (
 				AD5117BB1DC438C8006B6070 /* Antonym.xcdatamodeld in Sources */,
 				AD4E74DB1DC4D25A0052948E /* InputSpeechViewController.swift in Sources */,
+				AD7F22531DC4DB9900140D68 /* NetworkEngine.swift in Sources */,
 				AD5117B51DC438C8006B6070 /* ViewController.swift in Sources */,
 				AD5117B31DC438C8006B6070 /* AppDelegate.swift in Sources */,
 			);
@@ -434,6 +476,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5DTG6NUT49;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Antonym/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.midori.Antonym;
@@ -447,6 +493,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5DTG6NUT49;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Antonym/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.midori.Antonym;

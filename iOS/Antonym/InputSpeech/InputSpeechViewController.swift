@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+import SwiftDate
 
 final class InputSpeechViewController: UIViewController {
 
@@ -25,6 +26,9 @@ final class InputSpeechViewController: UIViewController {
 
         speechRecognizer.delegate = self
         button.isEnabled = false
+        
+        let network = NetworkEngine()
+        network.getAsync(text: "ノーブラ")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,14 +94,15 @@ final class InputSpeechViewController: UIViewController {
         
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
             guard let `self` = self else { return }
-            
             var isFinal = false
+            var inputText = ""
             
             if let result = result {
-                self.label.text = result.bestTranscription.formattedString
+                inputText = result.bestTranscription.formattedString
+                self.label.text = inputText
                 isFinal = result.isFinal
             }
-            
+
             // エラーがある、もしくは最後の認識結果だった場合の処理
             if error != nil || isFinal {
                 self.audioEngine.stop()
@@ -118,6 +123,10 @@ final class InputSpeechViewController: UIViewController {
         }
         
         try startAudioEngine()
+    }
+    
+    func changeView(sender:Timer) {
+        print("５秒後だよ")
     }
     
     private func refreshTask() {
