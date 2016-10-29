@@ -147,7 +147,7 @@ final class InputSpeechViewController: UIViewController {
         label.text = "どうぞ喋ってください。"
     }
     
-    private func Speech(text: String) {
+    private func speech(text: String) {
         let utterance = AVSpeechUtterance(string: text)
         setOptionsForSpeech(utterance: utterance)
         self.talker.speak(utterance)
