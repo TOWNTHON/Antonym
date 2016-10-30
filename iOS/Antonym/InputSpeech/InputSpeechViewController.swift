@@ -19,6 +19,7 @@ final class InputSpeechViewController: UIViewController {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     private let talker = AVSpeechSynthesizer()
+    private var inputText = ""
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
@@ -28,9 +29,6 @@ final class InputSpeechViewController: UIViewController {
 
         speechRecognizer.delegate = self
         button.isEnabled = false
-        
-        let network = NetworkEngine()
-        network.getAsync(text: "ノーブラ")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,6 +41,9 @@ final class InputSpeechViewController: UIViewController {
             recognitionRequest?.endAudio()
             button.isEnabled = false
             button.setTitle("停止中", for: .disabled)
+            
+            let network = NetworkEngine()
+            network.getAsync(text: inputText)
         } else {
             try! startRecording()
             button.setTitle("音声認識を中止", for: [])
@@ -97,11 +98,10 @@ final class InputSpeechViewController: UIViewController {
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { [weak self] result, error in
             guard let `self` = self else { return }
             var isFinal = false
-            var inputText = ""
             
             if let result = result {
-                inputText = result.bestTranscription.formattedString
-                self.label.text = inputText
+                self.inputText = result.bestTranscription.formattedString
+                self.label.text = self.inputText
                 isFinal = result.isFinal
             }
 
