@@ -18,13 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTV-gR-k5l" userLabel="gackgroundView">
-                                <frame key="frameInset" minY="240" width="375" height="208"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTV-gR-k5l" userLabel="gackgroundView">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="どんな言葉を言われてもすぐにその反対語で返します。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-CI-2DF">
-                                        <frame key="frameInset" minY="32" width="375" height="143.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どんな言葉を言われてもすぐにその反対語で返します。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljX-CI-2DF">
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <nil key="textColor"/>
@@ -32,20 +28,42 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ljX-CI-2DF" firstAttribute="top" secondItem="sTV-gR-k5l" secondAttribute="top" constant="30" id="DjU-Qj-EEk"/>
+                                    <constraint firstAttribute="trailing" secondItem="ljX-CI-2DF" secondAttribute="trailing" id="Hjh-Yk-Bsp"/>
+                                    <constraint firstItem="ljX-CI-2DF" firstAttribute="leading" secondItem="sTV-gR-k5l" secondAttribute="leading" id="T17-xD-yWe"/>
+                                    <constraint firstAttribute="bottom" secondItem="ljX-CI-2DF" secondAttribute="bottom" constant="30" id="px1-tO-gxb"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHG-d0-8WM">
-                                <frame key="frameInset" minX="155" minY="456" width="66" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHG-d0-8WM">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VXy-Sm-fWY"/>
+                                    <constraint firstAttribute="width" constant="200" id="zRS-F4-UIi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
                                 <state key="normal" title="はじめる">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0078431372550000003" green="0.56078431370000004" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tapStartButton:" destination="XSa-qs-iOZ" eventType="touchUpInside" id="uEc-z9-rwD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0078431372549019607" green="0.5607843137254902" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="sTV-gR-k5l" firstAttribute="centerY" secondItem="KH5-df-DzB" secondAttribute="centerY" id="BGB-38-gCx"/>
+                            <constraint firstItem="sTV-gR-k5l" firstAttribute="centerX" secondItem="KH5-df-DzB" secondAttribute="centerX" id="Jnv-QT-Vxh"/>
+                            <constraint firstItem="WHG-d0-8WM" firstAttribute="centerX" secondItem="sTV-gR-k5l" secondAttribute="centerX" id="M3M-Js-7FT"/>
+                            <constraint firstItem="9tj-b3-SDg" firstAttribute="top" secondItem="WHG-d0-8WM" secondAttribute="bottom" constant="50" id="XVC-BR-29F"/>
+                            <constraint firstAttribute="trailing" secondItem="sTV-gR-k5l" secondAttribute="trailing" id="cCQ-Ht-OpK"/>
+                            <constraint firstItem="sTV-gR-k5l" firstAttribute="leading" secondItem="KH5-df-DzB" secondAttribute="leading" id="ndF-lG-xp8"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="WHG-d0-8WM" id="aDZ-Iy-FOz"/>
