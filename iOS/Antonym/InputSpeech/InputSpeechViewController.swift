@@ -9,7 +9,7 @@
 import UIKit
 import Speech
 import AVFoundation
-import SwiftDate
+//import SwiftDate
 
 final class InputSpeechViewController: UIViewController {
 
@@ -146,18 +146,7 @@ final class InputSpeechViewController: UIViewController {
         
         label.text = "どうぞ喋ってください。"
     }
-    
-    private func speech(text: String) {
-        let utterance = AVSpeechUtterance(string: text)
-        setOptionsForSpeech(utterance: utterance)
-        self.talker.speak(utterance)
-    }
-    
-    private func setOptionsForSpeech(utterance: AVSpeechUtterance) {
-        utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
-        utterance.pitchMultiplier = 0.8
-        utterance.rate = 0.1
-    }
+
 }
 
 extension InputSpeechViewController: SFSpeechRecognizerDelegate {
